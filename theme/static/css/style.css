@@ -1,0 +1,14 @@
+* {
+    font-family:arial;
+}
+pre {
+    font-family:'Courier New', Courier, monospace;
+}
+a:visited {
+    color:navy;
+}
+
+#wrapper {
+    width:960px;
+    margin:auto;
+}

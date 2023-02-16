@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+{% include "customers/nav.html" with customer=customer title="View" %}
+
+Age: {{ customer.age }}
+
+<h2>Addresses</h2>
+<ul>
+    {% for address in addresses %}
+    <li>
+        {{ address.city }}<br>
+        {{ address.country|linebreaks }}
+        <br>
+        <a href="{% url 'customers:address_edit' address.id %}">edit</a>
+        <a href="{% url 'customers:address_delete' address.id %}">delete</a>
+    </li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'customers:address_new' customer.id %}">New Address</a>
+{% endblock %}

@@ -1,0 +1,9 @@
+<h2>
+<a href="{% url 'customers:home' %}">Application Home</a>
+{% if customer %}
+&gt; <a href="{% url 'customers:customer_view' customer.id %}">{{ customer.name }}</a>
+{% endif %}
+{% if title %}
+&gt; {{ title }}
+{% endif %}
+</h2>

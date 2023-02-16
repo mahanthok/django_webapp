@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Customer List{% endblock %}
+
+{% block content %}
+{% include "customers/nav.html" %}
+
+Customers Parent/Child with Multi View
+
+<ul>
+    {% for customer in customers %}
+    <li>{{ customer.name }}  ({{ customer.age }} Age )
+    <a href="{% url 'customers:customer_view' customer.id %}">view</a>
+    <a href="{% url 'customers:customer_edit' customer.id %}">edit</a>
+    <a href="{% url 'customers:customer_delete' customer.id %}">delete</a>
+    </li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'customers:customer_new' %}">New</a>
+{% endblock %}

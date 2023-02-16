@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<ul>
+
+<li><a href="{% url 'customers:home' %}">Parent/Child using multiple views</a></li>
+</ul>
+
+You can also access Django built-in <a href="/admin/">Admin interface</a>, you would need to
+create a user using the following command:
+
+<pre>./manage.py  createsuperuser</pre>
+{% endblock %}
